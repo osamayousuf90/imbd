@@ -1,12 +1,13 @@
 import React from 'react'
-import Footer from '../Footer/footer'
-import PageNotFound from '../PageNotFound/PageNotFind'
 
-const Home = () => {
+
+const Home = ({changer , style , white }) => {
+  
   return (
         <>
-        <PageNotFound/>
-        <Footer/>            
+      <div style={style} className="home">
+        <h2>Hello WOrld</h2>
+        </div>
         </>
   )
 }

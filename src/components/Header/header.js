@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from "./imgs/logo.png"
 
-const Header = () => {
+
+const Header = ({style , changer , white}) => {
+    
+
+
+
   return (
       <>
       <div className="header">
@@ -12,6 +17,8 @@ const Header = () => {
         <div className="profile">
         <i class="fa-solid fa-user"></i>
         </div>
+         <button onClick={changer}>Dark</button>
+       
        </div>
       </>
   )
