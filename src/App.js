@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Home from "./components/Home/home";
 import MovieDetail from "./components/MovieDetail/moviedetail";
@@ -12,9 +12,6 @@ function App() {
 
   const [white, setWhite] = useState(false)
 
-  // useEffect(() => {
-  //   localStorage.setItem("black");
-  // }, [])
 
   const isBlack = localStorage.getItem("black");
     

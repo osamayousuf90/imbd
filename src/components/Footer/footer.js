@@ -3,7 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
       <>
-       <h2>Footer</h2>
+      <div className="footer_container">
+          <h4> 2022 ⓒ IMDb - All rights goes to Osama </h4>
+       </div>
       </>
   )
 }

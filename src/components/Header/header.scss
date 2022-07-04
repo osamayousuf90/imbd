@@ -8,23 +8,32 @@
     align-items: center;
 
 
+    .logo_container {
+        width: 30%;
+    }
+
     .fa-user {
         color: white;
         font-size: 2rem;
     }
 
-
     .logo {
-        width: 6rem;
+        width: 25%;
+    }
+
+    .profile {
+        width: 30%;
     }
 
     .toggler_theme_changer {
-      width: 5%;
+      padding: 0rem 2rem;
       height: 2rem;
       border-radius: 2rem;
 
     }
 
-
+    .toggler_container {
+        width: 10%;
+    }
  
 }
