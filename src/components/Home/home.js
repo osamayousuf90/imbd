@@ -1,20 +1,23 @@
-import React from 'react'
-import MovieListing from '../MovieListing/movielisting'
-import movieApi from '../apis/movieApi'
-import APIKey from '../apis/movieApiKey'
-import { useEffect } from 'react'
+import React from 'react';
+import MovieListing from '../MovieListing/movielisting';
+import movieApi from '../apis/movieApi';
+import APIKey from '../apis/movieApiKey';
+import { useEffect } from 'react';
+import axios from "axios";
 
 const Home = ({ changer, style, white }) => {
  
   useEffect(() => {
-      const moviesText = "Harry"
+    fetchmovies()
+  }, [])
+  
+
  
   
-  const fetchmovies = async () => {
-      await movieApi.get(`?apiKey=${APIKey}&s=${moviesText}&type=movie`).then((res) => console.log(res)).catch((err) => console.log(err))
+  const fetchmovies =  async () => {
+     await movieApi.get("http://www.omdbapi.com/?s=Harry&apikey=c369b124&type=movie").then((res) => console.log(res)).catch((err) => console.log(err))
      } 
     
-    }, [])
   
   return (
         <>
