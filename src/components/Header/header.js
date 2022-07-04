@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Logo from "./imgs/logo.png"
 
 
-const Header = ({style , changer , white}) => {
+const Header = ({style , isBlack , changer , white}) => {
     
 
 
@@ -17,8 +17,8 @@ const Header = ({style , changer , white}) => {
         <div className="profile">
         <i class="fa-solid fa-user"></i>
         </div>
-         <button onClick={changer}>Dark</button>
-       
+        <button className='toggler_theme_changer' onClick={changer}>{ isBlack ? <i class="fa-solid fa-sun"></i> : <i class="fa-solid fa-moon"></i> }</button>
+       `
        </div>
       </>
   )

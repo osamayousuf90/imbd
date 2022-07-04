@@ -12,10 +12,9 @@ function App() {
 
   const [white, setWhite] = useState(false)
 
-  useEffect(() => {
-  localStorage.setItem("black" , "setBlack")
-   
-  }, [])
+  // useEffect(() => {
+  //   localStorage.setItem("black");
+  // }, [])
 
   const isBlack = localStorage.getItem("black");
     
@@ -25,15 +24,17 @@ function App() {
     color: isBlack ? "white" : "black"
   }
 
- 
+  
 
    
   const changer = () => {
-    if (isBlack === "setBlack") {
-       setWhite(false)
-    } else if (isBlack === "setBlack") {
-      localStorage.removeItem("black")
+    if (white === false) {
       setWhite(true)
+  localStorage.setItem("black" , "setBlack")
+    } else if (white === true) {
+      setWhite(false);
+      localStorage.removeItem("black")
+
      }
   }
 
@@ -42,7 +43,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header style={style} changer={changer} white={white} />  
+        <Header style={style} isBlack={isBlack} changer={changer} white={white} />  
             <Routes>
               <Route path="/" element={<Home style={style} changer={changer} white={white} />}></Route>
               <Route path="/movie/:imdbID" element={<MovieDetail />}></Route>

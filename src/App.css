@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .fa-user {
+  color: white;
+  font-size: 2rem;
+}
+
+.header .logo {
+  width: 6rem;
+}
+
+.header .toggler_theme_changer {
+  width: 5%;
+  height: 2rem;
+  border-radius: 2rem;
+}
+
+.home {
+  height: 100vh !important;
+  width: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=App.css.map */
