@@ -14,7 +14,7 @@ const Home = ({ changer, style, white }) => {
   useEffect(() => {
     const fetchmovies =  async () => {
      await movieApi
-        .get(`http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`).then((res) => { console.log(dispatch(addMovies(res.data))); dispatch(addMovies(res.data)) }).catch((err) => console.log(err));
+        .get(`http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`).then((res) => { dispatch(addMovies(res.data)) }).catch((err) => console.log(err));
          
     } 
     fetchmovies();
@@ -27,7 +27,7 @@ const Home = ({ changer, style, white }) => {
   
   return (
         <>
-      <div style={style} className="home">
+      <div style={style} className="home container-fluid">
          <MovieListing/>
         </div>
         </>

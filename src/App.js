@@ -7,6 +7,7 @@ import MovieDetail from "./components/MovieDetail/moviedetail";
 import PageNotFound from "./components/PageNotFound/PageNotFind";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
+import MovieCard from "./components/MovieCard/moviecard";
 
 function App() {
 
@@ -42,9 +43,10 @@ function App() {
       <BrowserRouter>
         <Header style={style} isBlack={isBlack} changer={changer} white={white} />  
             <Routes>
-              <Route path="/" element={<Home style={style} changer={changer} white={white} />}></Route>
+              <Route path="/" element={<Home style={style} isBlack={isBlack} changer={changer} white={white} />}></Route>
               <Route path="/movie/:imdbID" element={<MovieDetail />}></Route>
-              <Route path="*" element={<PageNotFound />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
+          <Route element={<MovieCard style={style} />}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const moviecard = () => {
+const MovieCard = ({ isBlack , style }) => {
+ 
   return (
-      <div>
-          <h3>mOVIE cARD</h3>
+    <div style={style} className="cart_item">
+      <h3>mOVIE cARD</h3>
     </div>
-  )
-}
+  );
+};
 
-export default moviecard
+export default MovieCard;
