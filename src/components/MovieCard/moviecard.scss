@@ -1,7 +1,9 @@
 .cart_item {
-    display: block;
-    height: 25%;
-    width: 20%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10rem 5rem;
     border: 1px solid grey;
     background-color: transparent;
 }
