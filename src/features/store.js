@@ -1,6 +1,8 @@
-import { configure } from "@testing-library/react";
+import { configureStore } from "@reduxjs/toolkit";
 import movieReducer from "./movies/movieSlice"
 
-export const store = configure({
-    reducer: movieReducer,
+export const store = configureStore({
+    reducer : {
+        movies: movieReducer,
+    }
 });
