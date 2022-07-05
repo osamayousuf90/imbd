@@ -11,11 +11,13 @@ const Home = ({ changer, style, white }) => {
     fetchmovies()
   }, [])
   
-
+  const movieName = "Harry"
+  const dispatch = useDispatch();
+  const 
  
   
   const fetchmovies =  async () => {
-     await movieApi.get("http://www.omdbapi.com/?s=Harry&apikey=c369b124&type=movie").then((res) => console.log(res)).catch((err) => console.log(err))
+     await movieApi.get(`http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`).then((res) => console.log(res)).catch((err) => console.log(err))
      } 
     
   
