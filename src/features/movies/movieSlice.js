@@ -1,6 +1,23 @@
-import { createSlice , createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import APIKey from "../../components/apis/movieApiKey"
+import movieApi from "../../components/apis/movieApi";
+import { useDispatch } from "react-redux";
 
-const fetchAsyncMovies = createAsyncThunk("movie/")
+// export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies", async () => {
+//     const dispatch = useDispatch();
+//     const movieName = "Deadpool";
+    
+
+//     await movieApi
+//     .get(
+//       `http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`
+//     )
+//     .then((res) => {
+//         console.log(res.data);
+//         return res.data
+
+//     })
+// })
 
 
 const initialState = {
@@ -15,6 +32,18 @@ const moviesSlice = createSlice({
             state.movies = payload;  
         },
     },
+    // extraReducers: {
+    //     [fetchAsyncMovies.pending]: () => {
+    //         console.log("Pending");
+    //     },
+    //     [fetchAsyncMovies.fulfilled]: (state , {payload}) => {
+    //         console.log("Fullfield Succesfully");
+    //         return {...state , movies: payload}
+    //     },
+    //     [fetchAsyncMovies.rejected]: () => {
+    //         console.log("Rejected");
+    //     },
+    // }
     
 })
 

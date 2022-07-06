@@ -1,37 +1,45 @@
-import React from 'react';
-import MovieListing from '../MovieListing/movielisting';
-import movieApi from '../apis/movieApi';
-import APIKey from '../apis/movieApiKey';
-import { useEffect } from 'react';
-import { useDispatch } from "react-redux"
-import { addMovies } from '../../features/movies/movieSlice';
+import React from "react";
+import MovieListing from "../MovieListing/movielisting";
+import { useEffect } from "react";
+import { addMovies, fetchAsyncMovies } from "../../features/movies/movieSlice";
+import { useDispatch } from "react-redux";
+import movieApi from "../apis/movieApi";
+import APIKey from "../apis/movieApiKey";
+
 
 const Home = ({ changer, style, white }) => {
- 
-  const movieName = "Deadpool"
+  
   const dispatch = useDispatch();
-  
+  const movieName = "Deadpool";
+
+
   useEffect(() => {
-    const fetchmovies =  async () => {
-     await movieApi
-        .get(`http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`).then((res) => { dispatch(addMovies(res.data)) }).catch((err) => console.log(err));
-         
-    } 
-    fetchmovies();
-  }, [])
+    const fetchMovies = async () => {
+      await movieApi
+      .get(
+        `http://www.omdbapi.com/?s=${movieName}&apikey=${APIKey}&type=movie`
+      )
+      .then((res) => {
+        console.log(res.data);
+        dispatch(addMovies(res.data))
+        return res.data;
   
-
-  
-  
+      })
+    }
     
-  
-  return (
-        <>
-      <div style={style} className="home container-fluid">
-         <MovieListing/>
-        </div>
-        </>
-  )
-}
+    fetchMovies();
+  }, []); 
 
-export default Home
+
+  
+
+  return (
+    <>
+      <div style={style} className="home container-fluid">
+        <MovieListing />
+      </div>
+    </>
+  );
+};
+
+export default Home;
