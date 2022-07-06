@@ -6,15 +6,16 @@ import MovieCard from "../MovieCard/moviecard";
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   console.log(movies);
+  
 
   return (
     <>
       {movies.Response === "True" ?
         (<>
-          {movies.Search.map((res , movie , index) => {
+          {movies.Search.map(( movie , index) => {
             return (
               <>
-                <MovieCard key={index} data={movie} />
+                <MovieCard key={index} movie={movie} />
               </>
             )
           })}

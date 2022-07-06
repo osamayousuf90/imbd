@@ -8,7 +8,7 @@ import { addMovies } from '../../features/movies/movieSlice';
 
 const Home = ({ changer, style, white }) => {
  
-  const movieName = "Harry"
+  const movieName = "Deadpool"
   const dispatch = useDispatch();
   
   useEffect(() => {

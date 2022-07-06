@@ -19,7 +19,9 @@ function App() {
   
   const style = {
     backgroundColor: isBlack ? "black" : "white",
-    color: isBlack ? "white" : "black"
+    color: isBlack ? "white" : "black",
+    border: isBlack ? "1px solid white" : "1px solid black",
+    fontWeight: isBlack ? "580" : "600"
   }
 
   
