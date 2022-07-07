@@ -10,14 +10,13 @@ import APIKey from "../apis/movieApiKey";
 const Home = ({ style }) => {
   
 
-
-
   
 
   return (
     <>
      
       <div style={style} className="home container-fluid">
+        
         <MovieListing />
       </div>
     </>

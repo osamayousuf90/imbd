@@ -16,7 +16,7 @@ const MovieCard = ({ movie, style  }) => {
           <p >Category : {movie.Type}</p>
         </div>
       </div>
-      </Link>
+       </Link>
       
   );
 };

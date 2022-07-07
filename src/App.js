@@ -51,7 +51,7 @@ function App() {
               <Route path="/movie/:imdbID" element={<MovieDetail style={style} />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
           <Route element={<MovieCard style={style} />}></Route>
-          <Route path="/searchMovie" element={<SearchMovie/>} ></Route>
+          <Route path="/searchMovie" element={<SearchMovie style={style} />} ></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

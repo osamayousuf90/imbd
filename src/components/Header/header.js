@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react'
+import React, { useState , useEffect  } from 'react'
 import Logo from "./imgs/logo.png"
 import movieApi from '../apis/movieApi';
 import { useDispatch } from 'react-redux';
@@ -46,7 +46,7 @@ const Header = ({ style, isBlack, changer, white  }) => {
     .then((res) => {
       console.log(res.data);
       dispatch(addMovies(res.data))
-             navigate("/searchMovie")
+             navigate("/")
 
       return res.data;
 

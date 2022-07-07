@@ -4,31 +4,34 @@ import { addMovies } from '../../features/movies/movieSlice';
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import APIKey from '../apis/movieApiKey';
+import { useSelector } from 'react-redux';
+import { getAllMovies } from '../../features/movies/movieSlice';
+import MovieCard from '../MovieCard/moviecard';
 
-const SearchMovie = () => {
+const SearchMovie = (style) => {
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate()
+  //   const dispatch = useDispatch();
+  // const navigate = useNavigate();
+
+  const movies = useSelector(getAllMovies);
    
-    const test = async () => {
-    
-        await movieApi
-        .get(
-          `http://www.omdbapi.com/?s=${search}&apikey=${APIKey}&type=${category}`
-        )
-        .then((res) => {
-          console.log(res.data);
-          dispatch(addMovies(res.data))
-                 navigate("/searchMovie")
-    
-          return res.data;
-    
-        })
-      }
-     
     
   return (
-    <div>SearchMovie</div>
+    <>
+    {movies.Response === "True" ?
+      (<>
+        {movies.Search.map(( movie , index) => {
+          return (
+            <>
+              <MovieCard style={style} key={index} movie={movie} />
+            </>
+          )
+        })}
+      </>) :
+      (<>
+        <h3>Not Working</h3>
+      </>)}
+  </>   
   )
 }
 
