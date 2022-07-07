@@ -4,7 +4,7 @@
     background-color: black;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 
 
@@ -22,7 +22,10 @@
     }
 
     .profile {
-        width: 30%;
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+
     }
 
     .toggler_theme_changer {
@@ -34,6 +37,37 @@
 
     .toggler_container {
         width: 10%;
+    }
+
+
+    .search_input {
+        padding: 15px;
+        height: 20px;
+        width: 40%;
+        background-color: aliceblue;
+        border: none;
+        // border-bottom: 1px solid white;
+        outline: none;
+        transition: 0.4s all;
+        border-radius: 0.2rem;
+        outline: 1px solid grey;
+    }
+
+    .search_input:focus {
+        background-color: rgb(148, 155, 155);
+        color: white;
+    }
+
+
+    .search_btn {
+        background-color: transparent;
+        // padding: 15px;
+        color: white;
+        padding: 0 10px;
+    }
+
+    option {
+        cursor: pointer;
     }
  
 }

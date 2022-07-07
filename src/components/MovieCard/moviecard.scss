@@ -4,18 +4,25 @@
   flex-direction: column;
   justify-content: space-around;
   height: auto;
-  width: 20%;
+  width: 100%;
   cursor: pointer;
-  transition: 0.4s linear;
+  transition: 0.4s linear !important;
   position: relative;
   overflow: hidden;
   align-items: center;
+ 
+  .img_card {
+    transition: 0.4s linear;
+        width: 80%;
+      }
+
+  &:hover > img {
+    transform: scale(1.1);
+    transition: 0.4s all;
+  }
 
 
-    .img_card {
-  transition: 0.4s linear;
-      width: 80%;
-    }
+  
 
     .text {
       width: 80%;
@@ -25,7 +32,9 @@
       margin: 0.5rem;
     }
     
-
-
+    Link {
+      color: white;
+    }
+    
 }
 

@@ -1,8 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from "react-router-dom";
 
-const MovieDetail = () => {
+const MovieDetail = ({ style, movie }) => {
+
+  console.log(movie);
+  
+  const { imdbID } = useParams();
+
   return (
-    <div>moviedetail</div>
+    <>
+      <div style={style} className="container_info">
+        <h2>{imdbID}</h2>
+        {/* <p>{}</p> */}
+
+      
+      </div>
+    </>
   )
 }
 

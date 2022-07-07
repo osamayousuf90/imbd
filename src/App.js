@@ -8,9 +8,9 @@ import PageNotFound from "./components/PageNotFound/PageNotFind";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import MovieCard from "./components/MovieCard/moviecard";
+import SearchMovie from "./components/SearchMovie/SearchMovie";
 
 function App() {
-
   const [white, setWhite] = useState(false)
 
 
@@ -26,7 +26,7 @@ function App() {
 
   
 
-   
+
   const changer = () => {
     if (white === false) {
       setWhite(true)
@@ -40,15 +40,18 @@ function App() {
 
 
 
+
+
   return (
     <>
       <BrowserRouter>
-        <Header style={style} isBlack={isBlack} changer={changer} white={white} />  
+        <Header isBlack={isBlack} changer={changer} />  
             <Routes>
               <Route path="/" element={<Home style={style} isBlack={isBlack} changer={changer} white={white} />}></Route>
-              <Route path="/movie/:imdbID" element={<MovieDetail />}></Route>
+              <Route path="/movie/:imdbID" element={<MovieDetail style={style} />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
           <Route element={<MovieCard style={style} />}></Route>
+          <Route path="/searchMovie" element={<SearchMovie/>} ></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
